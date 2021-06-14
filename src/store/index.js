@@ -42,6 +42,10 @@ export default new Vuex.Store({
             })
         },
 
+        setGamePause(state, status) {
+            state.isGamePaused = status;
+        },
+
         setScore(state, score) {
             state.score = score;
         },

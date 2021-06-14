@@ -10,7 +10,7 @@ import TeetterTotter from '@/components/TeeterTotter/TeeterTotter.vue';
 import { mapState} from 'vuex';
 import Shapes from '@/components/Shapes.vue';
 import * as status from '../unit/status'
-import * as actions from '../unit/actions'
+import * as controls from '../unit/controls'
 
 
 export default {
@@ -22,13 +22,13 @@ export default {
     ...mapState(["boardAngle"]),
   },
   mounted(){
-    window.addEventListener('keydown', actions.moveAction);
+    window.addEventListener('keydown', controls.moveAction);
     window.onerror = function () {
         status.restartGame();
     }
   },
   destroyed(){
-    window.removeEventListener('keydown', actions.moveAction);
+    window.removeEventListener('keydown', controls.moveAction);
 
   }
 

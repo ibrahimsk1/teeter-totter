@@ -18,24 +18,37 @@ export const startGame = () => {
 
 export const restartGame = () => {
     store.commit("setGameStatus", "")
-    store.state.fallingShapesArr.map(x => clearInterval(store.state.fallingShapesObj[x.id].interval))
+    store.state.fallingShapesArr.map(x => {
+        let interval = store.state.fallingShapesObj[x.id].interval
+        if (interval) clearInterval(interval)
+    });
     clearInterval(store.state.angleInterval)
     store.commit("storeReset");
-    store.commit("setBoardAngle", 0);
 }
 
 
+export const pauseGame = () => {
+    store.state.fallingShapesArr.map(x => {
+        let interval = store.state.fallingShapesObj[x.id].interval
+        if (interval) clearInterval(interval)
+    });
+    if (store.state.angleInterval) clearInterval(store.state.angleInterval)
+    store.commit("setGamePause", true);
+}
+
+
+export const contineuGame = () => {
+    store.state.fallingShapesArr.map(x => {
+        let interval = store.state.fallingShapesObj[x.id].interval
+        if (interval) actions.startFall(x.id)
+    });
+    if (store.state.angleInterval) actions.startBoardMovement();
+    store.commit("setGamePause", false);
+
+}
+
+
+
 // const endGame = () => {
-
-// }
-
-
-
-// const pauseGame = () => {
-
-// }
-
-
-// const contineuGame = () => {
 
 // }

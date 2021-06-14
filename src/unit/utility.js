@@ -1,5 +1,5 @@
 import { MIN_WEIGHT, MAX_WEIGHT, SCALE_STEP } from '../constants/index';
-import Shape from "../unit/Shape"
+import Shape from "./shape"
 
 export const createBatchBlocks = (shapeNum) => {
     let fallingShapes = {}

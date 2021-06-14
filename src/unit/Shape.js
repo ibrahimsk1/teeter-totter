@@ -13,7 +13,7 @@ class Shape {
         if (options.SIDE == "left") {
             this.left = utility.generateRandomNumber(0, 40);
         } else {
-            this.left = utility.generateRandomNumber(60, 100);
+            this.left = utility.generateRandomNumber(50, 90);
         }
         this.color = utility.generateRandomRGBColor();
         this.scale = 1 + SCALE_STEP * (this.weight - 1);
