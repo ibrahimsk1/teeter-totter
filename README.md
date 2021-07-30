@@ -1,5 +1,9 @@
 # Teetter Totter
 
+- teeter-tooter game developed with vuejs
+
+![Teeter-Tooter Vuejs Demo](demo/teeterDemo.gif)
+
 ## Project setup
 ```
 npm install
