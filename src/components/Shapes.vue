@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex';
+import { mapState } from 'vuex';
 
 import Shape from '@/components/Shape.vue';
 export default {
@@ -25,19 +25,6 @@ export default {
     ...mapState([ 'fallingShapesArr']),
   },
 
-  methods: {
-    ...mapMutations([ 
-      'toggleModal',
-      "setRefs"
-    ]),
-  
-   
-    handleBoardTransitionEnd() {
-          this.toggleModal(true);
-      }
-    },
-
-  
 }
 </script>
 

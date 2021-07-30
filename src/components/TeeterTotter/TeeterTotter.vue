@@ -17,20 +17,18 @@ import Shape from '@/components/Shape.vue';
 export default {
   props: {
     boardAngle: [String, Number],
-    isBoardingAngleInLimit: Boolean,
   },
   components: { 
     Shape,
   },
   computed: {
-    ...mapState([ 'droppedShapesRight', 'droppedShapesLeft', "randomlyPlacedShapes" ]),
+    ...mapState([ 'droppedShapesRight', 'droppedShapesLeft' ]),
     boardStyles() {
       return { 
         transform: `rotate(${ this.boardAngle }deg)`, 
         height: `${ BOARD_HEIGHT }px`
       };
     },
-    // this.boardBendingAngle / 2
     baseStyles() {
       return { 
         height: `${ BASE_HEIGHT }rem`,

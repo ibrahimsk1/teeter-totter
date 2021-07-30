@@ -22,7 +22,7 @@ export const restartGame = () => {
         let interval = store.state.fallingShapesObj[x.id].interval
         if (interval) clearInterval(interval)
     });
-    clearInterval(store.state.angleInterval)
+    if (store.state.angleInterval) clearInterval(store.state.angleInterval)
     store.commit("storeReset");
 }
 
